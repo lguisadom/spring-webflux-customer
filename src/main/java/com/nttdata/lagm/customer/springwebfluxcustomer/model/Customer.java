@@ -18,5 +18,5 @@ public class Customer {
     private String dni;
     private String phone;
     private String email;
-    private CustomerType customerType;
+    private Integer customerTypeId;
 }
