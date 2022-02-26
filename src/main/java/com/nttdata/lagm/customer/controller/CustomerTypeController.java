@@ -1,4 +1,4 @@
-package com.nttdata.lagm.customer.springwebfluxcustomer.controller;
+package com.nttdata.lagm.customer.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.nttdata.lagm.customer.springwebfluxcustomer.model.CustomerType;
-import com.nttdata.lagm.customer.springwebfluxcustomer.service.CustomerTypeService;
+import com.nttdata.lagm.customer.model.CustomerType;
+import com.nttdata.lagm.customer.service.CustomerTypeService;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;

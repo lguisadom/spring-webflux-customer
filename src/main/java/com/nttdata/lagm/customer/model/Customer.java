@@ -1,4 +1,4 @@
-package com.nttdata.lagm.customer.springwebfluxcustomer.model;
+package com.nttdata.lagm.customer.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

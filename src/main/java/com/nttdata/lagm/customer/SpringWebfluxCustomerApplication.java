@@ -1,4 +1,4 @@
-package com.nttdata.lagm.customer.springwebfluxcustomer;
+package com.nttdata.lagm.customer;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

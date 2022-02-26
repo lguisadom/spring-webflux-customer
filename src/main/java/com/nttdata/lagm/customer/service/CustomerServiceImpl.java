@@ -1,10 +1,10 @@
-package com.nttdata.lagm.customer.springwebfluxcustomer.service;
+package com.nttdata.lagm.customer.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
-import com.nttdata.lagm.customer.springwebfluxcustomer.model.Customer;
-import com.nttdata.lagm.customer.springwebfluxcustomer.repository.CustomerRepository;
+import com.nttdata.lagm.customer.model.Customer;
+import com.nttdata.lagm.customer.repository.CustomerRepository;
 
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
