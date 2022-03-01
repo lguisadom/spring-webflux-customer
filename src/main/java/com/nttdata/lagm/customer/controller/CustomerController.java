@@ -3,7 +3,6 @@ package com.nttdata.lagm.customer.controller;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
@@ -14,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nttdata.lagm.customer.dto.CustomerResponse;
 import com.nttdata.lagm.customer.model.Customer;
 import com.nttdata.lagm.customer.service.CustomerService;
 
@@ -33,17 +33,22 @@ public class CustomerController {
 		customerService.create(customer);
 	}
 	
-	@GetMapping(produces = MediaType.TEXT_EVENT_STREAM_VALUE)
+	@GetMapping()
 	@ResponseStatus(HttpStatus.OK)
 	private Flux<Customer> findAll() {
 		return customerService.findAll();
 	}
 	
-	@GetMapping("/{id}")
+	@GetMapping("/id/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	private ResponseEntity<Mono<Customer>> findById(@PathVariable("id") Long id) {
-		Mono<Customer> monoCustomer = customerService.findById(id);
-		return new ResponseEntity<>(monoCustomer, monoCustomer != null ? HttpStatus.OK : HttpStatus.NOT_FOUND);
+	private Mono<Customer> findById(@PathVariable("id") Long id) {
+		return customerService.findById(id);
+	}
+	
+	@GetMapping("/dni/{dni}")
+	@ResponseStatus(HttpStatus.OK)
+	private Mono<CustomerResponse> findByDni(@PathVariable("dni") String dni) {
+		return customerService.findByDni(dni);
 	}
 	
 	@PutMapping

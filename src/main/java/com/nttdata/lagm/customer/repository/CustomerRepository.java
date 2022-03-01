@@ -5,6 +5,10 @@ import org.springframework.stereotype.Repository;
 
 import com.nttdata.lagm.customer.model.Customer;
 
+import reactor.core.publisher.Mono;
+
 @Repository
 public interface CustomerRepository extends ReactiveMongoRepository<Customer, Long> {
+	//@Query("{'dni': ?0}")
+	Mono<Customer> findBydni(String dni);
 }
