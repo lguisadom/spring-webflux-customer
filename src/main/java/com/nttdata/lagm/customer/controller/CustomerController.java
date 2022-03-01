@@ -21,7 +21,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 @RestController
-@RequestMapping(path = "/customer")
+@RequestMapping(path = "/api/v1/customer")
 public class CustomerController {
 	
 	@Autowired

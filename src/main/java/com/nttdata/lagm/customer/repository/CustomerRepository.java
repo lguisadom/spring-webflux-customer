@@ -9,6 +9,5 @@ import reactor.core.publisher.Mono;
 
 @Repository
 public interface CustomerRepository extends ReactiveMongoRepository<Customer, Long> {
-	//@Query("{'dni': ?0}")
 	Mono<Customer> findBydni(String dni);
 }

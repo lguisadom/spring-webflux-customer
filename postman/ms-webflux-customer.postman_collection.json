@@ -23,13 +23,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/customerType/create",
+							"raw": "http://localhost:8082/api/v1/customerType/create",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8082",
 							"path": [
+								"api",
+								"v1",
 								"customerType",
 								"create"
 							]
@@ -43,13 +45,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/customerType/get/all",
+							"raw": "http://localhost:8082/api/v1/customerType/get/all",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8082",
 							"path": [
+								"api",
+								"v1",
 								"customerType",
 								"get",
 								"all"
@@ -64,13 +68,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/customerType/1",
+							"raw": "http://localhost:8082/api/v1/customerType/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8082",
 							"path": [
+								"api",
+								"v1",
 								"customerType",
 								"1"
 							]
@@ -93,13 +99,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/customerType",
+							"raw": "http://localhost:8082/api/v1/customerType",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8082",
 							"path": [
+								"api",
+								"v1",
 								"customerType"
 							]
 						}
@@ -112,13 +120,15 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/customerType/3",
+							"raw": "http://localhost:8082/api/v1/customerType/3",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8082",
 							"path": [
+								"api",
+								"v1",
 								"customerType",
 								"3"
 							]
@@ -146,13 +156,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/customer",
+							"raw": "http://localhost:8082/api/v1/customer",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8082",
 							"path": [
+								"api",
+								"v1",
 								"customer"
 							]
 						}
@@ -165,13 +177,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/customer",
+							"raw": "http://localhost:8082/api/v1/customer",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8082",
 							"path": [
+								"api",
+								"v1",
 								"customer"
 							]
 						}
@@ -184,13 +198,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/customer/2",
+							"raw": "http://localhost:8082/api/v1/customer/2",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8082",
 							"path": [
+								"api",
+								"v1",
 								"customer",
 								"2"
 							]
@@ -204,13 +220,15 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/customer/dni/12345678",
+							"raw": "http://localhost:8082/api/v1/customer/dni/12345678",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8082",
 							"path": [
+								"api",
+								"v1",
 								"customer",
 								"dni",
 								"12345678"
@@ -234,13 +252,15 @@
 							}
 						},
 						"url": {
-							"raw": "http://localhost:8082/customer/",
+							"raw": "http://localhost:8082/api/v1/customer/",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8082",
 							"path": [
+								"api",
+								"v1",
 								"customer",
 								""
 							]
@@ -254,13 +274,15 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/customer/1",
+							"raw": "http://localhost:8082/api/v1/customer/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
 							],
 							"port": "8082",
 							"path": [
+								"api",
+								"v1",
 								"customer",
 								"1"
 							]
