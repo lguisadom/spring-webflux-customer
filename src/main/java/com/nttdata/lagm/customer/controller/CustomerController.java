@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.nttdata.lagm.customer.config.AppConfig;
 import com.nttdata.lagm.customer.dto.CustomerResponse;
 import com.nttdata.lagm.customer.model.Customer;
 import com.nttdata.lagm.customer.service.CustomerService;
@@ -26,6 +27,17 @@ public class CustomerController {
 	
 	@Autowired
 	private CustomerService customerService;
+	
+	@Autowired
+	private AppConfig appConfig;
+	
+	@GetMapping(value= "/properties", produces = MediaType.APPLICATION_JSON_VALUE)
+	@ResponseStatus(HttpStatus.OK)
+	private String getProperties() {
+		return String.format("ServerPort: %s\nProfile Description: %s\n",
+				appConfig.getPort(),
+				appConfig.getProfileDescription());
+	}
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)

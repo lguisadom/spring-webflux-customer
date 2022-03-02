@@ -15,7 +15,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"id\": 2,\r\n    \"description\": \"Empresarial\"\r\n}",
+							"raw": "{\r\n    \"id\": 3,\r\n    \"description\": \"Empresarial\"\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -287,6 +287,19 @@
 								"1"
 							]
 						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "config",
+			"item": [
+				{
+					"name": "config",
+					"request": {
+						"method": "GET",
+						"header": []
 					},
 					"response": []
 				}
