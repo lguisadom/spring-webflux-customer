@@ -1,18 +1,9 @@
-server:
-  port: 8082
-  
 spring:
   application:
     name: service-customer #(1)
   profiles:
     active:
     - dev #(2)
-#MONGO
-  data:
-    mongodb:
-      authentication-database: customerdb
-      host: localhost
-      port: 27017
   cloud:
     config:
       profile: dev #(3) dev, qa, prod
