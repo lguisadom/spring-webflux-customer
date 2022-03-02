@@ -24,3 +24,20 @@ spring:
 #     a partir de la version 2.4.x de springboot. El atributo optional
 #     indica que si el ms no puede contactar al configserver, no dará
 #     un error y continuara con la carga del servicio.
+management:
+  endpoints:
+    enabled-by-default: false
+    web:
+      exposure:
+        include: health, info, refresh, restart, env
+  endpoint:
+    health:
+      enabled: true
+    info:
+      enabled: true
+    refresh:
+      enabled: true
+    restart:
+      enabled: true
+    env:
+      enabled: true
