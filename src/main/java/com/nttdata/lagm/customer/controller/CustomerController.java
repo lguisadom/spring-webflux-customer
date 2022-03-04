@@ -41,8 +41,8 @@ public class CustomerController {
 	
 	@PostMapping
 	@ResponseStatus(HttpStatus.CREATED)
-	private void create(@RequestBody Customer customer) {
-		customerService.create(customer);
+	private Mono<Customer> create(@RequestBody Customer customer) {
+		return customerService.create(customer);
 	}
 	
 	@GetMapping()

@@ -17,8 +17,8 @@ public class CustomerServiceImpl implements CustomerService {
 	private CustomerRepository customerRepository;
 	
 	@Override
-	public void create(Customer customer) {
-		customerRepository.save(customer).subscribe();
+	public Mono<Customer> create(Customer customer) {
+		return customerRepository.save(customer);
 	}
 
 	@Override

@@ -7,7 +7,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface CustomerService {
-	public void create(Customer customer);
+	public Mono<Customer> create(Customer customer);
 	public Flux<Customer> findAll();
 	public Mono<Customer> findById(Long id);
 	public Mono<CustomerResponse> findByDni(String dni);
