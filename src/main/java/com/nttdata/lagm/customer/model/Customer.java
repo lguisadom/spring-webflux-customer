@@ -16,6 +16,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Builder
 @Document(collection = "customer")
 public class Customer implements Serializable {
+	private Long id;
     private String lastName;
     private String firstName;
     private String dni;

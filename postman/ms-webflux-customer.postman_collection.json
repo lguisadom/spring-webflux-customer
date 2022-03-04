@@ -148,7 +148,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"lastName\": \"Guisado\",\r\n    \"firstName\": \"Luis\",\r\n    \"dni\": \"12345678\",\r\n    \"phone\": \"877545451\",\r\n    \"email\": \"luisguisado@email.com\",\r\n    \"customerTypeId\": 1\r\n}",
+							"raw": "{\r\n    \"id\": 1,\r\n    \"lastName\": \"Lourdes\",\r\n    \"firstName\": \"Rivera\",\r\n    \"dni\": \"45512451\",\r\n    \"phone\": \"955645125\",\r\n    \"email\": \"lourdesrivera@email.com\",\r\n    \"customerTypeId\": 1\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -172,7 +172,7 @@
 					"response": []
 				},
 				{
-					"name": "getAll",
+					"name": "findAll",
 					"request": {
 						"method": "GET",
 						"header": [],
@@ -198,7 +198,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/api/v1/customer/2",
+							"raw": "http://localhost:8082/api/v1/customer/1",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -208,7 +208,7 @@
 								"api",
 								"v1",
 								"customer",
-								"2"
+								"1"
 							]
 						}
 					},
@@ -220,7 +220,7 @@
 						"method": "GET",
 						"header": [],
 						"url": {
-							"raw": "http://localhost:8082/api/v1/customer/dni/12345678",
+							"raw": "http://localhost:8082/api/v1/customer/dni/45587125",
 							"protocol": "http",
 							"host": [
 								"localhost"
@@ -231,7 +231,7 @@
 								"v1",
 								"customer",
 								"dni",
-								"12345678"
+								"45587125"
 							]
 						}
 					},

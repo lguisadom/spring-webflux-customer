@@ -51,7 +51,7 @@ public class CustomerController {
 		return customerService.findAll();
 	}
 	
-	@GetMapping("/id/{id}")
+	@GetMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
 	private Mono<Customer> findById(@PathVariable("id") Long id) {
 		return customerService.findById(id);
