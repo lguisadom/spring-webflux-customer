@@ -29,8 +29,8 @@ public class CustomerTypeController {
 
     @PostMapping("/create")
     @ResponseStatus(HttpStatus.CREATED)
-    private void createCustomerType(@RequestBody CustomerType customerType) {
-        customerTypeService.createCustomerType(customerType);
+    private Mono<CustomerType> createCustomerType(@RequestBody CustomerType customerType) {
+        return customerTypeService.createCustomerType(customerType);
     }
 
     @GetMapping(value = "/get/all", produces = MediaType.TEXT_EVENT_STREAM_VALUE)

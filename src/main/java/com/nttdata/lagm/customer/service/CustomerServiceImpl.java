@@ -6,7 +6,6 @@ import org.springframework.stereotype.Service;
 import com.nttdata.lagm.customer.model.Customer;
 import com.nttdata.lagm.customer.repository.CustomerRepository;
 
-import ch.qos.logback.core.joran.conditional.ThenAction;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 

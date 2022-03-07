@@ -6,7 +6,7 @@ import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
 public interface CustomerTypeService {
-    void createCustomerType(CustomerType customerType);
+    Mono<CustomerType> createCustomerType(CustomerType customerType);
     Mono<CustomerType> findByCustomerTypeId(Integer id);
     Flux<CustomerType> findAllCustomerType();
     Mono<CustomerType> updateCustomerType(CustomerType customerType);

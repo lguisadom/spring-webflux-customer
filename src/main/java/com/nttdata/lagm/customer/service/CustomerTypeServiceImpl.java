@@ -1,10 +1,11 @@
 package com.nttdata.lagm.customer.service;
 
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
+
 import com.nttdata.lagm.customer.model.CustomerType;
 import com.nttdata.lagm.customer.repository.CustomerTypeRepository;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
 import reactor.core.publisher.Flux;
 import reactor.core.publisher.Mono;
 
@@ -14,9 +15,18 @@ public class CustomerTypeServiceImpl implements CustomerTypeService {
     @Autowired
     private CustomerTypeRepository customerTypeRepository;
 
+    private Mono<Void> assertCustomerTypeNotExist(Integer id) {
+    	return customerTypeRepository.findById(id)
+    			.flatMap(customerType -> {
+    				return Mono.error(new Exception("CustomerType with id " + id + " is already registered"));
+    			})
+    			.then();
+    }
+    
     @Override
-    public void createCustomerType(CustomerType customerType) {
-        customerTypeRepository.save(customerType).subscribe();
+    public Mono<CustomerType> createCustomerType(CustomerType customerType) {
+        return assertCustomerTypeNotExist(customerType.getId())
+        		.then(customerTypeRepository.save(customerType));
     }
 
     @Override
