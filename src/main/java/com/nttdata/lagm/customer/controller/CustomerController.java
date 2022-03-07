@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nttdata.lagm.customer.config.AppConfig;
-import com.nttdata.lagm.customer.dto.CustomerResponse;
 import com.nttdata.lagm.customer.model.Customer;
 import com.nttdata.lagm.customer.service.CustomerService;
 
@@ -59,7 +58,7 @@ public class CustomerController {
 	
 	@GetMapping("/dni/{dni}")
 	@ResponseStatus(HttpStatus.OK)
-	private Mono<CustomerResponse> findByDni(@PathVariable("dni") String dni) {
+	private Mono<Customer> findByDni(@PathVariable("dni") String dni) {
 		return customerService.findByDni(dni);
 	}
 	
