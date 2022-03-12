@@ -52,7 +52,7 @@ public class CustomerController {
 	
 	@GetMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	private Mono<Customer> findById(@PathVariable("id") Long id) {
+	private Mono<Customer> findById(@PathVariable("id") String id) {
 		return customerService.findById(id);
 	}
 	
@@ -70,7 +70,7 @@ public class CustomerController {
 	
 	@DeleteMapping("/{id}")
 	@ResponseStatus(HttpStatus.OK)
-	private Mono<Void> delete(@PathVariable("id") Long id) {
+	private Mono<Void> delete(@PathVariable("id") String id) {
 		return customerService.delete(id);
 	}
 }

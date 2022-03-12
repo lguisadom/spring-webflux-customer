@@ -8,6 +8,6 @@ import com.nttdata.lagm.customer.model.Customer;
 import reactor.core.publisher.Mono;
 
 @Repository
-public interface CustomerRepository extends ReactiveMongoRepository<Customer, Long> {
+public interface CustomerRepository extends ReactiveMongoRepository<Customer, String> {
 	Mono<Customer> findBydni(String dni);
 }

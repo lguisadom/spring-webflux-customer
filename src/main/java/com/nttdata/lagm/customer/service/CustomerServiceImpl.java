@@ -35,7 +35,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public Mono<Customer> findById(Long id) {
+	public Mono<Customer> findById(String id) {
 		return customerRepository.findById(id);
 	}
 	
@@ -63,7 +63,7 @@ public class CustomerServiceImpl implements CustomerService {
 	}
 
 	@Override
-	public Mono<Void> delete(Long id) {
+	public Mono<Void> delete(String id) {
 		return customerRepository.deleteById(id);
 	}
 }
