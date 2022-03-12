@@ -44,7 +44,7 @@ public class CustomerController {
 		return customerService.create(customer);
 	}
 	
-	@GetMapping()
+	@GetMapping(produces = MediaType.TEXT_EVENT_STREAM_VALUE)
 	@ResponseStatus(HttpStatus.OK)
 	private Flux<Customer> findAll() {
 		return customerService.findAll();
