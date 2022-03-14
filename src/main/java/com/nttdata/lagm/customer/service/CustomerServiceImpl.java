@@ -1,5 +1,6 @@
 package com.nttdata.lagm.customer.service;
 
+import com.nttdata.lagm.customer.util.Constants;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -14,8 +15,25 @@ public class CustomerServiceImpl implements CustomerService {
 
 	@Autowired
 	private CustomerRepository customerRepository;
-	
-	private Mono<Void> assertCustomerNotExistByDni(String dni) {
+
+	private Mono<Void> checkCustomerProfile(Customer customer) {
+		System.out.println("customer: " + customer);
+		if (Constants.CUSTOMER_PROFILE_REGULAR != customer.getCustomerProfileId()) {
+			if (Constants.CUSTOMER_TYPE_PERSONAL == customer.getCustomerTypeId()) {
+				if (customer.getCustomerProfileId() != Constants.CUSTOMER_PROFILE_VIP) {
+					return Mono.error(new Exception("Perfil erróneo para cliente Personal"));
+				}
+			} else if (Constants.CUSTOMER_TYPE_BUSINESS == customer.getCustomerTypeId()) {
+				if (customer.getCustomerProfileId() != Constants.CUSTOMER_PROFILE_PYME) {
+					return Mono.error(new Exception("Perfil erróneo para cliente Empresarial"));
+				}
+			}
+		}
+
+		return Mono.empty();
+	}
+
+	private Mono<Void> checkCustomerNotExistByDni(String dni) {
 		return this.customerRepository.findBydni(dni)
 				.flatMap(customer -> { 
 					return Mono.error(new Exception("Customer with dni " + dni + " is already registered"));
@@ -25,7 +43,8 @@ public class CustomerServiceImpl implements CustomerService {
 	
 	@Override
 	public Mono<Customer> create(Customer customer) {
-		return assertCustomerNotExistByDni(customer.getDni())
+		return checkCustomerNotExistByDni(customer.getDni())
+				.mergeWith(checkCustomerProfile(customer))
 				.then(customerRepository.save(customer));
 	}
 

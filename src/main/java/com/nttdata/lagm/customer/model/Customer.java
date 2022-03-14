@@ -29,5 +29,5 @@ public class Customer implements Serializable {
 	private String phone;
 	private String email;
 	private Integer customerTypeId;
-	private Integer customerProfileId;
+	private Integer customerProfileId = 1;
 }

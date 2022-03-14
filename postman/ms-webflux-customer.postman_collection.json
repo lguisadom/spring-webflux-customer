@@ -148,7 +148,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\r\n    \"lastName\": \"Guisad\",\r\n    \"firstName\": \"Luis\",\r\n    \"dni\": \"46687130\",\r\n    \"phone\": \"966389340\",\r\n    \"email\": \"luisguisado@email.com\",\r\n    \"customerTypeId\": 1\r\n}",
+							"raw": "{\r\n    \"lastName\": \"Mena\",\r\n    \"firstName\": \"Julia\",\r\n    \"dni\": \"46687139\",\r\n    \"phone\": \"966389342\",\r\n    \"email\": \"juliamena@email.com\",\r\n    \"customerTypeId\": 2,\r\n    \"customerProfileId\": 3\r\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -285,6 +285,62 @@
 								"v1",
 								"customer",
 								"4"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CustomerProfile",
+			"item": [
+				{
+					"name": "findAll",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8082/api/v1/customerProfile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"customerProfile"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "create",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"id\": 2,\r\n    \"description\": \"PYME\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8082/api/v1/customerProfile",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8082",
+							"path": [
+								"api",
+								"v1",
+								"customerProfile"
 							]
 						}
 					},
