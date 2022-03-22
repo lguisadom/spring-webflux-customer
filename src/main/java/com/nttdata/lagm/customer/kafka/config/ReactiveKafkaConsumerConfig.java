@@ -1,4 +1,4 @@
-package com.nttdata.lagm.customer.config.kafka.config;
+package com.nttdata.lagm.customer.kafka.config;
 
 import java.util.Collections;
 
@@ -13,7 +13,7 @@ import reactor.kafka.receiver.ReceiverOptions;
 @Configuration
 public class ReactiveKafkaConsumerConfig {
     @Bean
-    public ReceiverOptions<String, String> kafkaReceiverOptions(@Value(value = "${kafka.topic.consumer.findByDni}") String topic, KafkaProperties kafkaProperties) {
+    public ReceiverOptions<String, String> kafkaReceiverOptions(@Value(value = "${kafka.topic.consumer.findById}") String topic, KafkaProperties kafkaProperties) {
         ReceiverOptions<String, String> basicReceiverOptions = ReceiverOptions.create(kafkaProperties.buildConsumerProperties());
         return basicReceiverOptions.subscription(Collections.singletonList(topic));
     }

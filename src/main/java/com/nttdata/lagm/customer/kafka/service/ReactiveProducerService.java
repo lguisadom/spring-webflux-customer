@@ -1,4 +1,4 @@
-package com.nttdata.lagm.customer.config.kafka.service;
+package com.nttdata.lagm.customer.kafka.service;
 
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,7 +14,7 @@ public class ReactiveProducerService {
 	private final Logger LOGGER = LoggerFactory.getLogger(ReactiveProducerService.class);
     private final ReactiveKafkaProducerTemplate<String, Customer> reactiveKafkaProducerTemplate;
 
-    @Value(value = "${kafka.topic.producer.findByDni}")
+    @Value(value = "${kafka.topic.producer.findById}")
     private String topic;
 
     public ReactiveProducerService(ReactiveKafkaProducerTemplate<String, Customer> reactiveKafkaProducerTemplate) {

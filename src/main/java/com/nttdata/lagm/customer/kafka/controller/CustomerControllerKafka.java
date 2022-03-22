@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.nttdata.lagm.customer.config.AppConfig;
-import com.nttdata.lagm.customer.config.kafka.service.ReactiveConsumerService;
+import com.nttdata.lagm.customer.kafka.service.ReactiveConsumerService;
 import com.nttdata.lagm.customer.model.Customer;
 import com.nttdata.lagm.customer.service.CustomerService;
 

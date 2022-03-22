@@ -1,19 +1,19 @@
-package com.nttdata.lagm.customer.config.kafka.service;
+package com.nttdata.lagm.customer.kafka.service;
 
 import org.apache.kafka.clients.consumer.ConsumerRecord;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.CommandLineRunner;
 import org.springframework.kafka.core.reactive.ReactiveKafkaConsumerTemplate;
 import org.springframework.stereotype.Service;
 
-import com.nttdata.lagm.customer.model.Customer;
 import com.nttdata.lagm.customer.repository.CustomerRepository;
 
 import reactor.core.publisher.Mono;
 
 @Service
-public class ReactiveConsumerService {
+public class ReactiveConsumerService implements CommandLineRunner {
 	
 	private final Logger LOGGER = LoggerFactory.getLogger(ReactiveConsumerService.class);
 	
@@ -29,7 +29,8 @@ public class ReactiveConsumerService {
         this.reactiveKafkaConsumerTemplate = reactiveKafkaConsumerTemplate;
     }
 
-    private Mono<Void> consumeDniProduceCustomer() {
+    private Mono<Void> consumeIdProduceCustomer() {
+    	LOGGER.info("consumeIdProduceCustomer.....");
         return reactiveKafkaConsumerTemplate
                 .receiveAutoAck()
                 // .delayElements(Duration.ofSeconds(2L)) // BACKPRESSURE
@@ -40,15 +41,21 @@ public class ReactiveConsumerService {
                         consumerRecord.offset())
                 )
                 .map(ConsumerRecord::value)
-                .doOnNext(dni -> LOGGER.info("successfully consumed {}={}", "dni", dni))
+                .doOnNext(id -> LOGGER.info("successfully consumed {}={}", "id", id))
                 .doOnError(throwable -> LOGGER.error("something bad happened while consuming : {}", throwable.getMessage()))
                 .next()
-                .flatMap(dni -> {
-                	return customerRepository.findBydni(dni)
+                .flatMap(id -> {
+                	return customerRepository.findById(id)
                 		.flatMap(customer -> {
                 			reactiveProducerService.send(customer);
                 			return Mono.empty();
                 		});
                 });
+    }
+    
+    @Override
+    public void run(String... args) {
+    	LOGGER.info("ReactiveConsumerService.....");
+    	consumeIdProduceCustomer().subscribe();
     }
 }

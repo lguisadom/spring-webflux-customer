@@ -1,4 +1,4 @@
-package com.nttdata.lagm.customer.config.kafka.config;
+package com.nttdata.lagm.customer.kafka.config;
 
 import java.util.Map;
 
